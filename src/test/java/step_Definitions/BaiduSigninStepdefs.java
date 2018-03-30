@@ -1,4 +1,4 @@
-package resources.cucumber;
+package step_Definitions;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.And;
@@ -20,7 +20,7 @@ import java.util.Set;
  * Created by xqhuang on 21/03/2018.
  */
 
-public class BaiduLoginStepdefs {
+public class BaiduSigninStepdefs {
 
 	WebDriver driver = null;
 
@@ -66,7 +66,7 @@ public class BaiduLoginStepdefs {
 	public void Click(String button) throws Throwable {
 
 		WebElement element = driver.findElement(By.cssSelector("#u1>.lb"));
-			element.getText().equals(button);
+			assert element.getText().equals(button);
 				element.click();
 
 				switchsubWindow();
@@ -81,7 +81,7 @@ public class BaiduLoginStepdefs {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a.pass-reglink.pass-link")));
 
 		WebElement element = driver.findElement(By.cssSelector("a.pass-reglink.pass-link"));
-		element.getText().equals(sign_button);
+		assert element.getText().equals(sign_button);
 		element.click();
 	}
 
@@ -96,10 +96,6 @@ public class BaiduLoginStepdefs {
 
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("userName")));
-
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#TANGRAM__PSP_3__phone")));
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#TANGRAM__PSP_3__password")));
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#TANGRAM__PSP_3__verifyCodeSend")));
 
 		WebElement name = driver.findElement(By.name("userName"));
 		WebElement phonenumber = driver.findElement(By.cssSelector("#TANGRAM__PSP_3__phone"));
@@ -121,7 +117,7 @@ public class BaiduLoginStepdefs {
 	public void Submit_sign_request_to_click(String submit_button) throws Throwable {
 
 		WebElement element = driver.findElement(By.cssSelector("#TANGRAM__PSP_3__submit"));
-		element.getText().equals(submit_button);
+		assert element.getText().equals(submit_button);
 		element.click();
 
 		closeDriver();
@@ -137,7 +133,7 @@ public class BaiduLoginStepdefs {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#TANGRAM__PSP_10__footerULoginBtn")));
 
 		WebElement element = driver.findElement(By.cssSelector("#TANGRAM__PSP_10__footerULoginBtn"));
-		element.getText().equals(login_link);
+		assert element.getText().equals(login_link);
 		element.click();
 	}
 
@@ -151,7 +147,6 @@ public class BaiduLoginStepdefs {
 
 		driver.findElement(By.cssSelector("#TANGRAM__PSP_10__userName")).sendKeys(user);
 		driver.findElement(By.cssSelector("#TANGRAM__PSP_10__password")).sendKeys(password);
-
 	}
 
 	@Then("^Submit \"([^\"]*)\"$")
@@ -161,9 +156,22 @@ public class BaiduLoginStepdefs {
 				element.click();
 	}
 
+	@And("^Input and send verify code and click button$")
+	public void inputAndSendVerifyCodeAndClickButton() throws Throwable {
+
+		switchsubWindow();
+
+		WebElement element = driver.findElement(By.cssSelector("#TANGRAM__36__button_send_mobile"));
+		element.click();
+
+		throw new PendingException();
+	}
+
 	@And("^User login successfully with \"([^\"]*)\"$")
 	public void userLoginSuccessfullyWith(String username) throws Throwable {
+
 		Thread.sleep(20000);
+
 		WebElement element = driver.findElement(By.cssSelector("#s_username_top .user-name"));
 		assert element.getText().equals(username);
 

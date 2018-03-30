@@ -12,7 +12,7 @@ Feature: Sign in and login with baidu account
 	| web_site             | button | sign_button | username   | number      | password | submit_button |
 	| http://www.baidu.com | 登录   | 立即注册      | qaworkshop | 13932277223 | workshop | 注册  |
 
-
+  @wip
   Scenario Outline: login baidu with new account
 
 	Given User open a "<web_site>"
@@ -20,6 +20,7 @@ Feature: Sign in and login with baidu account
 	Then Click "<login_link>" and navigate to login web page
 	And Input "<user>" "<password>" on login page
 	Then Submit "<submit_button>"
+#	And Input and send verify code and click button
 	And User login successfully with "<username>"
 
 

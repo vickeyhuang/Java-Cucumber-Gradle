@@ -1,0 +1,255 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "examples": [
+          {
+            "line": 27,
+            "name": "",
+            "description": "",
+            "id": "sign-in-and-login-with-baidu-account;login-baidu-with-new-account;",
+            "rows": [
+              {
+                "cells": [
+                  "web_site",
+                  "button",
+                  "login_link",
+                  "user",
+                  "password",
+                  "submit_button",
+                  "username"
+                ],
+                "line": 28,
+                "id": "sign-in-and-login-with-baidu-account;login-baidu-with-new-account;;1"
+              },
+              {
+                "cells": [
+                  "http://www.baidu.com",
+                  "登录",
+                  "用户名登录",
+                  "vickey_1108@163.com",
+                  "Vickey@11081",
+                  "登录",
+                  "Vickeyfly16"
+                ],
+                "line": 29,
+                "id": "sign-in-and-login-with-baidu-account;login-baidu-with-new-account;;2"
+              }
+            ],
+            "keyword": "Examples"
+          }
+        ],
+        "line": 16,
+        "name": "login baidu with new account",
+        "description": "",
+        "id": "sign-in-and-login-with-baidu-account;login-baidu-with-new-account",
+        "type": "scenario_outline",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "line": 18,
+            "name": "User open a \"\u003cweb_site\u003e\"",
+            "keyword": "Given "
+          },
+          {
+            "line": 19,
+            "name": "Click \"\u003cbutton\u003e\"",
+            "keyword": "And "
+          },
+          {
+            "line": 20,
+            "name": "Click \"\u003clogin_link\u003e\" and navigate to login web page",
+            "keyword": "Then "
+          },
+          {
+            "line": 21,
+            "name": "Input \"\u003cuser\u003e\" \"\u003cpassword\u003e\" on login page",
+            "keyword": "And "
+          },
+          {
+            "line": 22,
+            "name": "Submit \"\u003csubmit_button\u003e\"",
+            "keyword": "Then "
+          },
+          {
+            "comments": [
+              {
+                "line": 23,
+                "value": "#\tAnd Input and send verify code and click button"
+              }
+            ],
+            "line": 24,
+            "name": "User login successfully with \"\u003cusername\u003e\"",
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 15,
+            "name": "@wip"
+          }
+        ]
+      },
+      {
+        "line": 29,
+        "name": "login baidu with new account",
+        "description": "",
+        "id": "sign-in-and-login-with-baidu-account;login-baidu-with-new-account;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2205830991,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User open a \"http://www.baidu.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "http://www.baidu.com",
+                  "offset": 13
+                }
+              ],
+              "location": "BaiduSigninStepdefs.userOpenA(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 93871351,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Click \"登录\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "登录",
+                  "offset": 7
+                }
+              ],
+              "location": "BaiduSigninStepdefs.Click(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 735244449,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "Click \"用户名登录\" and navigate to login web page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "用户名登录",
+                  "offset": 7
+                }
+              ],
+              "location": "BaiduSigninStepdefs.clickAndNavigateToLoginWebPage(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 314754331,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Input \"vickey_1108@163.com\" \"Vickey@11081\" on login page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "vickey_1108@163.com",
+                  "offset": 7
+                },
+                {
+                  "val": "Vickey@11081",
+                  "offset": 29
+                }
+              ],
+              "location": "BaiduSigninStepdefs.inputOnLoginPage(String,String)"
+            },
+            "matchedColumns": [
+              3,
+              4
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 28650381,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Submit \"登录\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "登录",
+                  "offset": 8
+                }
+              ],
+              "location": "BaiduSigninStepdefs.submit(String)"
+            },
+            "matchedColumns": [
+              5
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20022035464,
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#s_username_top .user-name\"}\n  (Session info: chrome\u003d65.0.3325.181)\n  (Driver info: chromedriver\u003d2.37.543654 (a46b62e9900f5ac48951f8ad68d9e03eded4cc8d),platform\u003dMac OS X 10.13.1 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 18 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.4.0\u0027, revision: \u0027unknown\u0027, time: \u0027unknown\u0027\nSystem info: host: \u0027Qing.local\u0027, ip: \u0027fe80:0:0:0:c62:f7e8:c9f8:cf0d%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.1\u0027, java.version: \u00271.8.0_25\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.37.543654 (a46b62e9900f5ac48951f8ad68d9e03eded4cc8d), userDataDir\u003d/var/folders/n3/m5b12yc52xbf8nkb3z_jdrd80000gn/T/.org.chromium.Chromium.seGnLT}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d65.0.3325.181, platform\u003dMAC, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dfalse, acceptInsecureCerts\u003dfalse, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d}]\nSession ID: 2f6697947c222a147ec34e17cf35aae4\n*** Element info: {Using\u003dcss selector, value\u003d#s_username_top .user-name}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:408)\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:501)\n\tat org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)\n\tat step_Definitions.BaiduSigninStepdefs.userLoginSuccessfullyWith(BaiduSigninStepdefs.java:175)\n\tat ✽.And User login successfully with \"Vickeyfly16\"(src/test/resources/cucumber/baidu_signin.feature:24)\n",
+              "status": "failed"
+            },
+            "comments": [
+              {
+                "line": 23,
+                "value": "#\tAnd Input and send verify code and click button"
+              }
+            ],
+            "line": 24,
+            "name": "User login successfully with \"Vickeyfly16\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Vickeyfly16",
+                  "offset": 30
+                }
+              ],
+              "location": "BaiduSigninStepdefs.userLoginSuccessfullyWith(String)"
+            },
+            "matchedColumns": [
+              6
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 15,
+            "name": "@wip"
+          }
+        ]
+      }
+    ],
+    "name": "Sign in and login with baidu account",
+    "description": "",
+    "id": "sign-in-and-login-with-baidu-account",
+    "keyword": "Feature",
+    "uri": "src/test/resources/cucumber/baidu_signin.feature"
+  }
+]

@@ -1,4 +1,4 @@
-package resources.cucumber;
+package step_Definitions;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
@@ -32,7 +32,6 @@ public class BasicStepDefs {
 
 
     @Then("^Gradle should report \"([^\"]*)\"$")
-
     public void Gradle_should_report(String testString) throws Throwable {
         System.out.println(testString);
     }
@@ -58,13 +57,16 @@ public class BasicStepDefs {
 
     @Then("^a browser title should contains \"([^\"]*)\"$")
     public void a_browser_title_should_contains(String text) throws Throwable {
-        Thread.sleep(1000);
+        Thread.sleep(500);
         driver.getTitle().contains(text);
         System.out.println("The page title is: " + driver.getTitle());
+
+        closeDriver();
     }
 
     public void closeDriver() {
         driver.quit();
     }
+
 
 }
