@@ -1,4 +1,4 @@
-//package java;
+package resources.cucumber;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.And;
@@ -123,6 +123,8 @@ public class BaiduLoginStepdefs {
 		WebElement element = driver.findElement(By.cssSelector("#TANGRAM__PSP_3__submit"));
 		element.getText().equals(submit_button);
 		element.click();
+
+		closeDriver();
 	}
 
 //login feature
@@ -164,6 +166,8 @@ public class BaiduLoginStepdefs {
 		Thread.sleep(20000);
 		WebElement element = driver.findElement(By.cssSelector("#s_username_top .user-name"));
 		assert element.getText().equals(username);
+
+		closeDriver();
 	}
 
 	private void closeDriver() {
